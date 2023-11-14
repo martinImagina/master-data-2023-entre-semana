@@ -32,7 +32,7 @@ lista_compra = [
         "producto": "Lechuga",
         "precio": 4.00,
         "unidades": 1,
-        "descuento": 50
+        "descuento": 75
     },
 ]
 
@@ -50,13 +50,13 @@ for elemento in lista_compra:
   producto = elemento["producto"]
   precio_elemento = elemento["precio"]
   unidades = elemento["unidades"]
-  descuento = elemento["descuento"]
-  if (descuento != 0):
+  porcentaje_desc = elemento["descuento"]
+  if (porcentaje_desc != 0):
     # Aplicamos el descuento
-    precio_despues_del_descuento = precio_elemento * (descuento / 100)
+    precio_despues_del_descuento = precio_elemento * (1-(porcentaje_desc / 100))
     precio_total_elemento = precio_despues_del_descuento * unidades
-    descuento_aplicado = precio_total_elemento - precio_despues_del_descuento
-    print('descuento_aplicado', descuento_aplicado)
+    descuento_aplicado = unidades * precio_elemento * porcentaje_desc / 100
+    #print('descuento_aplicado', descuento_aplicado)
   else:
     precio_total_elemento = precio_elemento * unidades
   
