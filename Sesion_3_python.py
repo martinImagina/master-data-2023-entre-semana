@@ -30,7 +30,7 @@ lista_compra = [
     },
     {
         "producto": "Lechuga",
-        "precio": 4.00,
+        "precio": 10.00,
         "unidades": 1,
         "descuento": 75
     },
@@ -74,5 +74,37 @@ for elemento in lista_compra:
 # Salimos del bucle y ya tenemos el precio_total actualizado
 print(f'''
 --------------------------------------------------------------
-Total:                                                 {precio_total}€
+Total:                                           {precio_total}€
 ''')
+
+
+
+
+# BUCLES WHILE
+
+lista = [1,2,3,4,5,6,7,8]
+
+# Bucle WHILE para encontrar eliminar elementos hasta que la longitud sea 3
+while (len(lista) > 3):
+  lista.pop()
+  print(lista)
+
+# ¡OJO! Ejemplo de Bucle Infinito
+''' 
+while (True):
+  print('Hola')
+'''
+
+opcion_escogida = ''
+
+while(opcion_escogida != 'X'):
+  opcion_escogida = input(
+'''
+Hola, escoge una opción:
+1. Introducir Producto
+2. Obtener Ticket Final
+X. Salir del programa
+''')
+  if(opcion_escogida == '1'):
+    nombre_producto = input('Indica el nombre del producto: ')
+    print(f'Has ecogido: {nombre_producto}')
